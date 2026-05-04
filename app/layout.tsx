@@ -1,31 +1,15 @@
 import type { Metadata } from "next";
-
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
-import { siteConfig } from "@/content/site";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Premium Corporate Website Starter`,
-    template: `%s | ${siteConfig.name}`,
+    default: "Nova Atelier",
+    template: "%s | Nova Atelier",
   },
-  description: siteConfig.description,
-  openGraph: {
-    title: siteConfig.name,
-    description: siteConfig.description,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-  },
+  description: "Minimal starter for rebuilding the Nova Atelier website step by step.",
 };
 
 export default function RootLayout({
@@ -35,9 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">
-        <div className="grain" aria-hidden="true" />
-        <div className="relative mx-auto flex min-h-screen max-w-[1680px] flex-col px-4 pb-4 sm:px-6 lg:px-8">
+      <body suppressHydrationWarning className="bg-background text-foreground">
+        <div className="flex min-h-screen flex-col">
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

@@ -1,37 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5efe7;
-  --foreground: #171311;
-  --surface: rgba(255, 252, 246, 0.82);
-  --surface-strong: #fffaf3;
-  --surface-dark: #1e1916;
-  --line: rgba(23, 19, 17, 0.12);
-  --line-strong: rgba(23, 19, 17, 0.2);
-  --muted: #6a6058;
-  --accent: #ae8252;
-  --accent-strong: #866441;
-  --accent-soft: rgba(174, 130, 82, 0.12);
-  --shadow: 0 30px 80px rgba(34, 27, 22, 0.08);
+  --background: #ffffff;
+  --foreground: #111111;
+  --muted: #6b7280;
+  --line: #e5e7eb;
   --font-body: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
-  --font-display: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", "Book Antiqua", serif;
+  --font-display: "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-surface-strong: var(--surface-strong);
-  --color-surface-dark: var(--surface-dark);
-  --color-line: var(--line);
-  --color-line-strong: var(--line-strong);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
-  --color-accent-soft: var(--accent-soft);
+  --color-line: var(--line);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
-  --shadow-soft: var(--shadow);
 }
 
 * {
@@ -44,18 +28,11 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(174, 130, 82, 0.2), transparent 34%),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 28%),
-    linear-gradient(180deg, #f8f3ec 0%, #f5efe7 30%, #efe8de 100%);
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-main {
-  position: relative;
 }
 
 a {
@@ -70,47 +47,7 @@ textarea {
 }
 
 ::selection {
-  background: rgba(174, 130, 82, 0.22);
-}
-
-.grain {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.3;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 140px 140px;
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-}
-
-.eyebrow::before {
-  display: inline-block;
-  height: 1px;
-  width: 2.5rem;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  content: "";
-}
-
-.section-shell {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  backdrop-filter: blur(24px);
-  box-shadow: var(--shadow);
+  background: #f3f4f6;
 }
 
 .text-balance {
